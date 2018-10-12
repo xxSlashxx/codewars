@@ -25,30 +25,7 @@ public class DirReduction
 
         for (String direction : arr)
         {
-            boolean push = false;
-
-            if (stack.isEmpty() /*stack.peek() == null*/)
-            {
-                push = true;
-            }
-            else if (DIRECTION_NORTH.equals(direction))
-            {
-                push = !DIRECTION_SOUTH.equals(stack.peek());
-            }
-            else if (DIRECTION_SOUTH.equals(direction))
-            {
-                push = !DIRECTION_NORTH.equals(stack.peek());
-            }
-            else if (DIRECTION_WEST.equals(direction))
-            {
-                push = !DIRECTION_EAST.equals(stack.peek());
-            }
-            else if (DIRECTION_EAST.equals(direction))
-            {
-                push = !DIRECTION_WEST.equals(stack.peek());
-            }
-
-            if (push)
+            if (stack.isEmpty() || !isOpposite(direction, stack.peek()))
             {
                 stack.push(direction);
             }
@@ -59,5 +36,13 @@ public class DirReduction
         }
 
         return stack.toArray(new String[0]);
+    }
+
+    public static boolean isOpposite(String direction, String predecessor)
+    {
+        return DIRECTION_NORTH.equals(direction) && DIRECTION_SOUTH.equals(predecessor) ||
+                DIRECTION_SOUTH.equals(direction) && DIRECTION_NORTH.equals(predecessor) ||
+                DIRECTION_WEST.equals(direction) && DIRECTION_EAST.equals(predecessor) ||
+                DIRECTION_EAST.equals(direction) && DIRECTION_WEST.equals(predecessor);
     }
 }
