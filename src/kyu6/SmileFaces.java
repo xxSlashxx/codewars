@@ -21,7 +21,7 @@ public class SmileFaces
 
         for (String smiley : arr)
         {
-            if (smiley.matches("(:|;)(-|~)?(\\)|D)"))
+            if (smiley.matches("^[:|;][-|~]?[\\)|D]$"))
             {
                 counter++;
             }
