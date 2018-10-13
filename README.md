@@ -1,1 +1,1 @@
-### https://www.codewars.com
+Puzzles from https://www.codewars.com for practice
