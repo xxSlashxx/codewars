@@ -14,11 +14,11 @@ public class SmallestIntegerFinder
 
     public static int findSmallestInt(int[] args)
     {
-        int smallestInt = 0;
+        int smallestInt = args[0];
 
-        for (int i = 0; i < args.length; i++)
+        for (int i = 1; i < args.length; i++)
         {
-            if (i == 0 || args[i] < smallestInt)
+            if (args[i] < smallestInt)
             {
                 smallestInt = args[i];
             }
