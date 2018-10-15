@@ -1,5 +1,8 @@
 package kyu8;
 
+/**
+ * Complete the solution so that it reverses the string value passed into it.
+ */
 public class ReversedStrings
 {
     public static void main(String[] args)
